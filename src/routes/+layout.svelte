@@ -23,7 +23,6 @@
 				//alert('tu no comes cabra zarabanbiche');
 			} else {
 				$error = false;
-				channel.postMessage({ type: 'page/mount', UID });
 			}
 		}
 	});

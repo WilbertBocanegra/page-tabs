@@ -20,13 +20,13 @@ channel.addEventListener('message', (e: MessageEvent) => {
 		} else {
 			data = [...data, e.data.UID];
 
-			deniedAccess = [];
 			channel.postMessage({ type: 'page/add', UID: data });
 		}
 	}
 	if (e && e.data && e.data.type === 'page/destroy') {
 		const index = data.indexOf(e.data.UID);
 		data.splice(index, 1);
+		deniedAccess = [];
 		channel.postMessage({ type: 'page/modify', UID: data });
 	}
 });

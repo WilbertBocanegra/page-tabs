@@ -37,7 +37,7 @@
 </script>
 
 {#if $error}
-	<div class="min-h-screen grid place-content-center">
+	<div class="min-h-screen grid place-content-center px-10">
 		<h1 class="uppercase font-mono text-center tracking-widest text-2xl">
 			para usar esta pestaña debe de cerrar alguna abierta del sistema, recargar otra pestaña hará
 			que tome este lugar

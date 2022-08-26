@@ -29,7 +29,9 @@
 	onMount(() => {
 		channel.postMessage({ type: 'page/mount', UID });
 	});
-
+	afterUpdate(() => {
+		if (data.length > 2) return;
+	});
 	beforeNavigate(() => {
 		channel.postMessage({ type: 'page/destroy', UID });
 	});

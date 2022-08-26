@@ -14,6 +14,7 @@
 		}
 		if (e && e.data && e.data.type === 'page/modify') {
 			data = e.data.UID;
+			$error = false;
 		}
 		if (e && e.data && e.data.type === 'page/denied') {
 			if (e.data.UID === UID) {

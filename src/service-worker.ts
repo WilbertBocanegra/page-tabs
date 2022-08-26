@@ -20,8 +20,7 @@ channel.addEventListener('message', (e: MessageEvent) => {
 		} else {
 			data = [...data, e.data.UID];
 
-			const index = deniedAccess.indexOf(e.data.UID);
-			deniedAccess.splice(index, 1);
+			deniedAccess = [];
 			channel.postMessage({ type: 'page/add', UID: data });
 		}
 	}

@@ -15,8 +15,8 @@ channel.addEventListener('message', (e: MessageEvent) => {
 	if (e && e.data && e.data.type === 'page/mount') {
 		//console.log("service",e);
 		if (data.length > 2) {
-			deniedAccess = [...deniedAccess, e.data.UID];
-			channel.postMessage({ type: 'page/denied', UID: deniedAccess });
+			//deniedAccess = [...deniedAccess, e.data.UID];
+			channel.postMessage({ type: 'page/denied', UID: e.data.UID });
 		} else {
 			data = [...data, e.data.UID];
 
@@ -26,7 +26,7 @@ channel.addEventListener('message', (e: MessageEvent) => {
 	if (e && e.data && e.data.type === 'page/destroy') {
 		const index = data.indexOf(e.data.UID);
 		data.splice(index, 1);
-		deniedAccess = [];
+		//deniedAccess = [];
 		channel.postMessage({ type: 'page/modify', UID: data });
 	}
 });

@@ -18,7 +18,7 @@
 			$error = false;
 		}
 		if (e && e.data && e.data.type === 'page/denied') {
-			if (e.data.UID.includes(UID)) {
+			if (e.data.UID === UID) {
 				$error = true;
 				//alert('tu no comes cabra zarabanbiche');
 			} else {

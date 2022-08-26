@@ -39,8 +39,7 @@
 {#if $error}
 	<div class="min-h-screen grid place-content-center">
 		<h1 class="uppercase font-mono text-center tracking-widest text-2xl">
-			para usar esta pestaña debe de cerrar alguna abierta del sistema, recargar esta tomara el
-			lugar de una de las otras
+			para usar esta pestaña debe de cerrar alguna abierta del sistema, recargar otra pestaña hará que tome este lugar
 		</h1>
 	</div>
 {:else}

@@ -14,7 +14,7 @@ let deniedAccess: number[] = [];
 channel.addEventListener('message', (e: MessageEvent) => {
 	if (e && e.data && e.data.type === 'page/mount') {
 		data = [...data, e.data.UID];
-
+		console.log(data);
 		if (data.length > 2) {
 			//deniedAccess = [...deniedAccess, e.data.UID];
 			channel.postMessage({ type: 'page/denied', UID: e.data.UID });

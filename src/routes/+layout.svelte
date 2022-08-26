@@ -14,6 +14,8 @@
 		}
 		if (e && e.data && e.data.type === 'page/modify') {
 			data = e.data.UID;
+			channel.postMessage({ type: 'page/mount', UID });
+
 			$error = false;
 		}
 		if (e && e.data && e.data.type === 'page/denied') {
@@ -22,6 +24,7 @@
 				//alert('tu no comes cabra zarabanbiche');
 			} else {
 				$error = false;
+				channel.postMessage({ type: 'page/mount', UID });
 			}
 		}
 	});
@@ -29,9 +32,7 @@
 	onMount(() => {
 		channel.postMessage({ type: 'page/mount', UID });
 	});
-	afterUpdate(() => {
-		if (data.length > 2) return;
-	});
+
 	beforeNavigate(() => {
 		channel.postMessage({ type: 'page/destroy', UID });
 	});

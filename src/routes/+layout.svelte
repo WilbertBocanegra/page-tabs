@@ -30,7 +30,9 @@
 	onMount(() => {
 		channel.postMessage({ type: 'page/mount', UID });
 	});
-
+	afterUpdate(() => {
+		channel.postMessage({ type: 'page/mount', UID });
+	});
 	beforeNavigate(() => {
 		channel.postMessage({ type: 'page/destroy', UID });
 	});

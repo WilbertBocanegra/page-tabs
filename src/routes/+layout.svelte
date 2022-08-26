@@ -14,7 +14,6 @@
 		}
 		if (e && e.data && e.data.type === 'page/modify') {
 			data = e.data.UID;
-			channel.postMessage({ type: 'page/mount', UID });
 
 			$error = false;
 		}
